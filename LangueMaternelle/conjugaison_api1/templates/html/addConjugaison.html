@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% load static%}
+{% block title %}Creer un Compte{% endblock %}
+
+{% block content %}
+<h1>Ajouter a conjugaison</h1>
+<p>Ajouter les informations dans le formuaire suivant:</p>
+
+<form method="post">
+	
+	{{ conj_form.as_p }}
+	{% csrf_token %}
+	<p><input type="submit" value="Valider" name=""></p>
+</form>
+
+{% endblock%}

@@ -1,0 +1,18 @@
+body{
+    background: aquamarine;
+}
+
+#head{
+    width: 500px;
+    height: auto;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 2px 3px 4px grey;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+td{
+    width: 250px;
+}

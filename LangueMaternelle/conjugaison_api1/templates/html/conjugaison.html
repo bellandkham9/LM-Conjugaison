@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjugaison</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+    
+    <div id="head">
+        <h1>Conjugaison</h1>
+        <div>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form1.as_p }}
+            
+            <button type="submit" class="save btn">Conjuguer</button>
+         </form>
+        </div>
+        <div>
+             <table border="2">
+                <thead>
+                    <tr><td>Maternelle</td><td>Français</td></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <tr><td>{{conjugL.person1}}</td></tr>
+                            <tr><td>{{conjugL.person2}}</td></tr>
+                            <tr><td>{{conjugL.person3}}</td></tr>
+                            <tr><td>{{conjugL.person4}}</td></tr>
+                            <tr><td>{{conjugL.person5}}</td></tr>
+                            <tr><td>{{conjugL.person6}}</td></tr>
+                        </td>
+                        <td>        
+                            {% for conjug in data%}
+                            <tr><td>{{conjug}}</td></tr>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <audio controls="controls">
+                <source src="{{conjugL.audio}}" type="audio/mp3"/>
+                 
+                Votre navigateur ne supporte pas la balise audio
+            </audio>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>
